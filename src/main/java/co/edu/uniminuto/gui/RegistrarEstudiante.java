@@ -176,18 +176,18 @@ public class RegistrarEstudiante extends javax.swing.JInternalFrame {
           && (txtCorreo.getText() != "")){
             Estudiante estudiante = new Estudiante(txtNombre.getText(),
                     txtApellidos.getText(),
-                    txtEdad.getText(),
+                    Integer.parseInt(txtEdad.getText()),
                     txtDireccion.getText(),
-                    txtTelefono.getText(),
+                    Integer.parseInt(txtTelefono.getText()),
                     txtGrado.getText(),
-                    txtCurso.getText(),
+                    Integer.parseInt(txtCurso.getText()),
                     txtJornada.getText(),
                     txtCorreo.getText(),1);
             EstudianteDao estudianteDao = new EstudianteDao();
             estudianteDao.registrarEstudiante(estudiante);
         } else {
             JOptionPane.showMessageDialog(this, "Campos vacíos");
-
+        }
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
