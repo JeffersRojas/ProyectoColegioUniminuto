@@ -19,7 +19,7 @@ public class ConexionDB {
         this.user = "root";
         this.password = "";
         this.nameDatabase = "colegio";
-        this.portMotor = "3306";
+        this.portMotor = ":3306";
         this.servidor = "localhost";
         this.cadUrl = "jdbc:mysql://" + this.servidor + this.portMotor + "/" + this.nameDatabase;
         this.con = null;
@@ -31,7 +31,6 @@ public class ConexionDB {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             this.con = DriverManager.getConnection(this.cadUrl, this.user, this.password);
-            JOptionPane.showMessageDialog(null, "Bienvenido a la Base de Datos miColegio");
 
         } catch (Exception e) {
 

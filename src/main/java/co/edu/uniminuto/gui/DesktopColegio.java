@@ -66,6 +66,11 @@ public class DesktopColegio extends javax.swing.JFrame {
         mnuInformacion.add(itemRegistrar);
 
         itemActualizar.setText("Actualizar Estudiante");
+        itemActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemActualizarActionPerformed(evt);
+            }
+        });
         mnuInformacion.add(itemActualizar);
 
         jMenuBar1.add(mnuInformacion);
@@ -108,6 +113,15 @@ public class DesktopColegio extends javax.swing.JFrame {
         
     
     }//GEN-LAST:event_mnuInformacionActionPerformed
+
+    private void itemActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemActualizarActionPerformed
+
+    ActualizarEstudiante estudiante = new ActualizarEstudiante();
+    panelDesktop.add(estudiante);
+    estudiante.show();
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_itemActualizarActionPerformed
 
     /**
      * @param args the command line arguments

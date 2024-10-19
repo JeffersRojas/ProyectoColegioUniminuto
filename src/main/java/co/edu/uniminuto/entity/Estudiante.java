@@ -4,7 +4,6 @@ package co.edu.uniminuto.entity;
 
 public class Estudiante {
     
-    private int estudianteId;
     private String estudianteNombre;
     private String estudianteApellidos;
     private int estudianteEdad;
@@ -30,28 +29,6 @@ public class Estudiante {
         this.estudianteJornada = estudianteJornada;
         this.estudianteCorreo = estudianteCorreo;
         this.estudianteStatus = estudianteStatus;
-    }
-
-    public Estudiante(int estudianteId, String estudianteNombre, String estudianteApellidos, int estudianteEdad, String estudianteDireccion, int estudianteTelefono, String estudianteGrado, int estudianteCurso, String estudianteJornada, String estudianteCorreo, int estudianteStatus) {
-        this.estudianteId = estudianteId;
-        this.estudianteNombre = estudianteNombre;
-        this.estudianteApellidos = estudianteApellidos;
-        this.estudianteEdad = estudianteEdad;
-        this.estudianteDireccion = estudianteDireccion;
-        this.estudianteTelefono = estudianteTelefono;
-        this.estudianteGrado = estudianteGrado;
-        this.estudianteCurso = estudianteCurso;
-        this.estudianteJornada = estudianteJornada;
-        this.estudianteCorreo = estudianteCorreo;
-        this.estudianteStatus = estudianteStatus;
-    }
-
-    public int getEstudianteId() {
-        return estudianteId;
-    }
-
-    public void setEstudianteId(int estudianteId) {
-        this.estudianteId = estudianteId;
     }
 
     public String getEstudianteNombre() {
