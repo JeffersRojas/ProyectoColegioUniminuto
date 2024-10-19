@@ -271,7 +271,22 @@ public class ActualizarEstudiante extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtidActionPerformed
 
     private void jButtonInactivarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInactivarActionPerformed
-     
+           Estudiante estudiante = new Estudiante(
+            txtNombre.getText(),
+            txtApellidos.getText(),
+            Integer.parseInt(txtEdad.getText()),
+            txtDireccion.getText(),
+            Integer.parseInt(txtTelefono.getText()),
+            txtGrado.getText(),
+                    Integer.parseInt(txtCurso.getText()),
+                    txtJornada.getText(),
+                    txtCorreo.getText(),2
+    );
+    EstudianteDao estudianteDao = new EstudianteDao();
+    estudianteDao.DardebajaAlumnos(estudiante, TableEstudiantes, txtid);
+    modelotabla.setRowCount(0);
+
+    dataEstudiantes();
     }//GEN-LAST:event_jButtonInactivarActionPerformed
 
 

@@ -60,23 +60,13 @@ public class EstudianteDao {
                 this.statement.setInt(10, 1);
                 int response = this.statement.executeUpdate();
                 if (response > 0) {
-                    JOptionPane.showMessageDialog(null, "OK-200 " + response);
+                    JOptionPane.showMessageDialog(null, "Alumno registrado correctamente " + response);
                 }
             }
 } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error no se pudo registrar");
             System.out.println("" + e.getMessage());
-        } finally {
-            if (myCon != null) {
-                try {   
-                    this.statement.close();
-                    myCon.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(EstudianteDao.class.getName()).
-                            log(Level.SEVERE, null, ex);
-                }
-            }
-        }
+        } 
     }
    
    public void SeleccionarAlumnos (JTable paramtableestudiantes, JTextField paramid, JTextField paramnombre, JTextField paramapellido, JTextField paramedad, JTextField paramdirreccion, JTextField paramtelefono, JTextField paramGrado, JTextField paramcurso, JTextField paramjornada, JTextField paramcorreo, JTextField parid){
@@ -144,5 +134,25 @@ public class EstudianteDao {
         }
     }
 }
-
+    
+    
+   public void DardebajaAlumnos (Estudiante estudiante,JTable paramtableestudiantes, JTextField paramid){
+       Connection myCon = this.conexionDB.getConexionDB();
+       String SQL = "UPDATE estudiantes SET est_estatus = 0 WHERE est_id = ?;";
+       
+       try {
+            
+            this.statement = myCon.prepareStatement(SQL);
+            this.statement.setInt(1, Integer.parseInt(paramid.getText()));
+            
+            int response = this.statement.executeUpdate();
+            if (response > 0) {
+                JOptionPane.showMessageDialog(null, "Estudiante dado de baja");
+            }
+       } catch (Exception e) {
+           JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+       }
+       
+   
+   }
 }
